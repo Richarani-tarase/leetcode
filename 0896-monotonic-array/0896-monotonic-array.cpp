@@ -19,7 +19,7 @@ class Solution {
     // }
 public:
     bool isMonotonic(vector<int>& nums) {
-        int c=1;
+        int c=1,count=1;
         for(int i=0;i<nums.size()-1;i++){
             if(nums[i]>=nums[i+1]){
                 c++;
@@ -29,13 +29,12 @@ public:
         {
             return true;
         }
-        c=1;
         for(int i=0;i<nums.size()-1;i++){
             if(nums[i]<=nums[i+1]){
-                c++;
+                count++;
             }
         }    
-        if(c==nums.size()){
+        if(count==nums.size()){
             return 1;
         }
         return 0;
