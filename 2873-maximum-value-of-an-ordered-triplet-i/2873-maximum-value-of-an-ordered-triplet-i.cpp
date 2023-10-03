@@ -9,10 +9,7 @@ public:
                 for(int k=j+1;k<nums.size();k++)
                 {
                     max1=(nums[i] - nums[j]) * (long)nums[k];
-                    if(max1>max2)
-                    {
-                        max2=max1;
-                    }
+                    max2=max(max1,max2);
                 }
             }
         }
