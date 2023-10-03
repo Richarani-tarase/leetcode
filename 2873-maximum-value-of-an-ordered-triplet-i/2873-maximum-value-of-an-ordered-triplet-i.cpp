@@ -1,6 +1,7 @@
 class Solution {
 public:
     long long maximumTripletValue(vector<int>& nums) {
+       // sort(nums.begin(),nums.end());
         long long max1=0,max2=0;
         for(int i=0;i<nums.size()-2;i++)
         {
