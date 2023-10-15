@@ -8,12 +8,10 @@ public:
         {
             for(int j=0;j<m;j++)
             {
-                if(grid[i][j]>=0)
+                if(grid[i][j]<0)
                 {
-                    continue;
-                }
-                else 
                     c++;
+                }
             }
         }
         return c;
