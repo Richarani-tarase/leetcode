@@ -3,14 +3,13 @@ public:
     int countDigits(int num) {
         int c=0;
         int a=num;
-        while(num)
+        while(a)
         {
-            int i=num%10;
-            if(a%i==0)
+            if(num%(a%10)==0)
             {
                 c++;
             }
-            num=num/10;
+            a=a/10;
         }
         return c;
     }
