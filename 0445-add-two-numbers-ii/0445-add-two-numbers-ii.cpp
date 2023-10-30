@@ -25,13 +25,12 @@ public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode* head=reverse(l1);
         ListNode* head2=reverse(l2),*temp,*p=NULL;
-        int carry=0,b=0,a=0;
+        int carry=0,a=0;
         while(head!=NULL && head2!=NULL)
         {
             temp=new ListNode();
-            int a=carry+head->val+head2->val;
-            b=a%10;
-            temp->val=b;
+            a=carry+head->val+head2->val;
+            temp->val=a%10;
             temp->next=p;
             p=temp;
             head=head->next;
