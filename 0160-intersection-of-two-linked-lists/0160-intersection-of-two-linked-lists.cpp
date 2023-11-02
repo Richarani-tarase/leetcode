@@ -18,13 +18,12 @@ public:
          while(headB!=NULL){
              if(ans[headB]==true){
                  ans[headB]=false;
-                 p=headB;
+                 return headB;
                  break;
              }
             ans[headB]=true;
             headB=headB->next;
         }
-        return p;
-        
+     return headB;   
     }
 };
