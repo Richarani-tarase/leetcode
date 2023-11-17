@@ -15,19 +15,19 @@ public:
             {
                 return head;
             }
-            ListNode* z=head;
+            ListNode* q=head,*p;
         int count=0,a=0;
-            while(z!=NULL)
+            while(q!=NULL)
             {
                 count++;
-                z=z->next;
+                q=q->next;
             }
             a=k%count;
         if(a==0)
             return head;
-        while(a)
+        while(a>0)
         {
-            ListNode* q=head,*p;
+           q=head;
             while(q->next->next!=NULL)
             {
                 q=q->next;
