@@ -16,18 +16,18 @@ public:
                 return head;
             }
             ListNode* q=head,*p;
-        int count=0,a=0;
+            int a=0;
             while(q!=NULL)
             {
-                count++;
+                a++;
                 q=q->next;
             }
-            a=k%count;
+            a=k%a;
         if(a==0)
             return head;
         while(a>0)
         {
-           q=head;
+            q=head;
             while(q->next->next!=NULL)
             {
                 q=q->next;
