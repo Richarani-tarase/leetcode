@@ -25,7 +25,7 @@ public:
             a=k%count;
         if(a==0)
             return head;
-        while(a>0)
+        while(a)
         {
             ListNode* q=head,*p;
             while(q->next->next!=NULL)
