@@ -27,7 +27,13 @@ public:
     }
     int rangeSumBST(TreeNode* root, int low, int high) {
         int ans=0;
-        sum(root,low,high,ans);
+        
+        if(root->val>high&&root->val!=high)
+            sum(root->left,low,high,ans);
+        else if(root->val<low&&root->val!=low)
+            sum(root->right,low,high,ans);
+        else
+            sum(root,low,high,ans);
         return ans;
     }
 };
