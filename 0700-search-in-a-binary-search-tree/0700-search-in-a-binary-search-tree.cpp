@@ -23,6 +23,7 @@ public:
         else if(val>root->val)
            return searchBST(root->right,val);
         else
-            return searchBST(root->left,val);   
+            return searchBST(root->left,val); 
+        return NULL;
     }
 };
