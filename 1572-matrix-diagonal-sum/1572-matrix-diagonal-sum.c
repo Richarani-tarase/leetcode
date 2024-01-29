@@ -5,12 +5,8 @@ int diagonalSum(int** mat, int* matSize, int* matColSize){
     {
         for(int j=0;j<m;j++)
         {
-            if(i==j || j==m-1-i)
-            {
+            if(i==j || (i+j)==m-1)
                 sum+=mat[i][j];
-            }
-            else
-                continue;
         }
     }
     return sum;
