@@ -11,17 +11,17 @@
  */
 class Solution {
 public:
-    void inorder(TreeNode*root,vector<int>& v)
-    {
-        if(root==NULL)
-        {
-            //v.push_back(-1);
-            return ;
-        }
-        inorder(root->left,v);
-        v.push_back(root->val);
-        inorder(root->right,v);
-    }
+    // void inorder(TreeNode*root,vector<int>& v)
+    // {
+    //     if(root==NULL)
+    //     {
+    //         //v.push_back(-1);
+    //         return ;
+    //     }
+    //     inorder(root->left,v);
+    //     v.push_back(root->val);
+    //     inorder(root->right,v);
+    // }
     TreeNode* insert(TreeNode*r,int n)
     {
         if(r==NULL)
@@ -33,12 +33,32 @@ public:
     }
     TreeNode* increasingBST(TreeNode* root) {
         TreeNode*r=NULL,temp=NULL;
-        vector<int>v;
-        inorder(root,v); 
-        for(int i=0;i<v.size();i++)
+        stack<TreeNode *>s;
+        TreeNode* t=root;
+        while(t!=NULL)
         {
-            r=insert(r,v[i]);
+            s.push(t);
+            t=t->left;
         }
+        while(!s.empty())
+        {
+            t=s.top();
+            s.pop();
+            r=insert(r,t->val);
+            if(t->right!=NULL)
+            {
+                t=t->right;
+                while(t!=NULL)
+                {
+                    s.push(t);
+                    t=t->left;
+                }
+            }
+        }
+        // for(int i=0;i<v.size();i++)
+        // {
+        //     r=insert(r,v[i]);
+        // }
         return r;
     }
 };
