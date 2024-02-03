@@ -1,7 +1,7 @@
 class Solution {
 public:
     int garbageCollection(vector<string>& garbage, vector<int>& travel) {
-        int mindex=0,gindex=0,pindex=0,mc=0,gc=0,pc=0;
+        int mindex=0,gindex=0,pindex=0,mc=0,gc=0,pc=0,m=0;
         string s;
         for(int i=0;i<garbage.size();i++)
         {
@@ -10,22 +10,21 @@ public:
             {
                 if(s[j]=='G')
                 {
-                    gc++;
+                    m++;
                     gindex=i;
                 }
                 if(s[j]=='M')
                 {
-                    mc++;
+                    m++;
                     mindex=i;
                 }
                 if(s[j]=='P')
                 {
-                    pc++;
+                    m++;
                     pindex=i;
                 }
             }
         }
-        int m=gc+mc+pc;
         for(int i=0;i<gindex;i++)
             {
                 m+=travel[i];
