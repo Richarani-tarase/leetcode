@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> rowAndMaximumOnes(vector<vector<int>>& mat) {
-        int c=0,max=0,a=0,b=0;
+        int c=0,a=0,b=0;
         for(int i=0;i<mat.size();i++)
         {
             c=0;
