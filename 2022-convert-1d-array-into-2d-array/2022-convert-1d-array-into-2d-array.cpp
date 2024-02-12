@@ -7,19 +7,16 @@ public:
         {
             return arr;
         }
-        else
-        {
             int index=0;
-            for(int j=0;j<m;j++)
+        for(int i=0;i<m&&index<original.size();i++)
+        {
+            vector<int>arr2;
+            for(int k=0;k<n;k++)
             {
-                vector<int>arr2;
-                for(int k=0;k<n;k++)
-                {
-                    arr2.push_back(original[index]);
-                    index++;
-                }
-                 arr.push_back(arr2);
+                arr2.push_back(original[index]);
+                index++;
             }
+             arr.push_back(arr2);
         }
         return arr;
     }
