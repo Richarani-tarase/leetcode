@@ -25,9 +25,7 @@ public:
         {
             return true;
         }
-        int ls=height(root->left);
-        int rs=height(root->right);
-        int a=abs(ls-rs);
+        int a=abs(height(root->left)-height(root->right));
         if(a>1)
         {
             return false;
