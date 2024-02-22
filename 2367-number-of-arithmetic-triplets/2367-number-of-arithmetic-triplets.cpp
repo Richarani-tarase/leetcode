@@ -6,11 +6,16 @@ public:
         {
             for(int j=i+1;j<nums.size()-1;j++)
             {
-                for(int k=j+1;k<nums.size();k++){
-                if(nums[j]-nums[i]==diff && nums[k] - nums[j] == diff)
+                if(nums[j]-nums[i]!=diff) 
                 {
-                    count++;
+                    continue;
                 }
+                for(int k=j+1;k<nums.size();k++)
+                {
+                    if(nums[k] - nums[j] == diff)
+                    {
+                        count++;
+                    }
                 }
             }
         }
