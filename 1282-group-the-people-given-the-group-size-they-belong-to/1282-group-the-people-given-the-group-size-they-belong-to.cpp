@@ -7,9 +7,7 @@ public:
             vector<int>temp;
             int c=groupSizes[i];
             if(c==0)
-            {
                 continue;
-            }
             else{
                 temp.push_back(i);
                 c--;
@@ -17,14 +15,12 @@ public:
             for(int j=i+1;j<groupSizes.size();j++)
             {
                 if(c==0)
-                {
                     break;
-                }
                 if(groupSizes[i]==groupSizes[j])
                 {
                     temp.push_back(j);
                     groupSizes[j]=0;
-                    c=c-1;
+                    c--;
                 }
             }
             ans.push_back(temp);
