@@ -8,15 +8,15 @@ public:
         }
         for(auto x:t)
         {
-            mp[x]++;
+           mp[x]++;
         }
-        for(auto x:mp)
+        for(int i=0;i<mp.size();i++)
         {
-            if(x.second%2==1)
+            if(mp[i]%2==1)
             {
-                return x.first;
+                return i;
             }
         }
-        return ' ';
+        return NULL;
     }
 };
