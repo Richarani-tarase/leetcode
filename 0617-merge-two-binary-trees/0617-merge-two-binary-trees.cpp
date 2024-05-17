@@ -19,8 +19,7 @@ public:
         }
         if(root1==NULL&&root2!=NULL)
         {
-            TreeNode*temp=root2;
-            root1=temp;
+            root1=root2;
             return;
         }
         if(root1!=NULL&&root2==NULL)
