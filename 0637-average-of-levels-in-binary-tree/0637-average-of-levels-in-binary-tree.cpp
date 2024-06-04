@@ -18,26 +18,23 @@ public:
         while(!q.empty())
         {
             double sum=0;
-            vector<TreeNode*> v;
-            while(!q.empty())
+            int n=q.size();
+            for(int i=0;i<n;i++)
             {
-                v.push_back(q.front());
+                TreeNode* a=q.front();
                 q.pop();
-            }
-            for(int i=0;i<v.size();i++)
-            {
-               sum+=v[i]->val;
-                if(v[i]->left!=NULL)
+                sum+=a->val;
+                if(a->left!=NULL)
                 {
-                    q.push(v[i]->left);
+                    q.push(a->left);
                 }
-                if(v[i]->right!=NULL)
+                if(a->right!=NULL)
                 {
-                    q.push(v[i]->right);
+                    q.push(a->right);
                 }
             }
-            sum/=v.size();
-            ans.push_back(sum);
+            ;
+            ans.push_back(sum/n);
         }
         return ans;
     }
