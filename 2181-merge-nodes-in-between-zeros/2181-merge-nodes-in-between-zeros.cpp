@@ -14,12 +14,9 @@ public:
         ListNode*start=head->next;
         ListNode* ans=new ListNode();
         int sum=0;
-        ans->val=sum;
-        ans->next=NULL;
         ListNode* t=ans;
         while(start!=NULL)
         {
-            sum+=start->val;
             if(start->val==0)
             {
                 ListNode* temp=new ListNode();
@@ -30,6 +27,7 @@ public:
                 t=t->next;
                 
             }
+            sum+=start->val;
             start=start->next;
         }
         return ans->next;
