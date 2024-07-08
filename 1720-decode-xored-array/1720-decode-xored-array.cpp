@@ -10,8 +10,7 @@ public:
         temp=temp2;
         for(int i=2;i<encoded.size();i++)
         {
-            if(i<encoded.size()-1)
-                temp2=encoded[i];
+            temp2=encoded[i];
             encoded[i]=encoded[i-1]^temp;
             temp=temp2;
         }
