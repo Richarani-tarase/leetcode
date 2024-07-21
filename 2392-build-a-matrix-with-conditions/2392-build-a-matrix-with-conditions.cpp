@@ -34,16 +34,6 @@ public:
         else return ans ;
 
     }
-
-    static void print(auto& c){
-        cout<<"[";
-        for(int x: c){
-            cout<<x;
-            if (x!=c.back()) cout<<", ";
-        }
-        cout<<"]\n";
-    }
-
     static vector<vector<int>> buildMatrix(int k, vector<vector<int>>& rowConditions, vector<vector<int>>& colConditions) {
         auto order_row=topo_sort(k, rowConditions);
         auto order_col=topo_sort(k, colConditions);
