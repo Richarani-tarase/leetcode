@@ -7,18 +7,14 @@ public:
             string s=words[i];
             for(int j=i+1;j<words.size();j++)
             {
-                if(s.size()<words[j].size())
+                if(words[j].find(s)!=-1)
                 {
-                    if(words[j].find(s)!=-1)
-                    {
-                        st.insert(s);
-                    }
+                    st.insert(s);
                 }
-                else
-                    if(s.find(words[j])!=-1)
-                    {
-                        st.insert(words[j]);
-                    }
+                if(s.find(words[j])!=-1)
+                {
+                    st.insert(words[j]);
+                }
             }
         }
         vector<string>v;
