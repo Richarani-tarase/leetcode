@@ -1,13 +1,11 @@
 class Solution {
 public:
-    void subset(vector<int> nums,int i,vector<int>&v,vector<vector<int>>& ans)
+    void subset(vector<int> nums,int i,vector<int>& v,vector<vector<int>>& ans)
     {
         if(i>=nums.size())
         {
-            vector<int>a=v;
-            sort(a.begin(),a.end());
-            if(find(ans.begin(),ans.end(),a)==ans.end())
-            ans.push_back(a);
+            if(find(ans.begin(),ans.end(),v)==ans.end())
+                ans.push_back(v);
             return;
         }
         v.push_back(nums[i]);
@@ -18,6 +16,7 @@ public:
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         vector<vector<int>>ans;
         vector<int>v;
+        sort(nums.begin(),nums.end());
         subset(nums,0,v,ans);
         return ans;
     }
