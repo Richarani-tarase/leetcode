@@ -1,8 +1,9 @@
 class Solution {
 public:
-    string reverseWords(string s) {
+    string reverseWords(string& s) {
         stack<char>st;
         string ans="";
+        s=' '+s;
         for(int i=s.size()-1;i>=0;i--)
         {
             if(s[i]!=' ')
@@ -20,12 +21,6 @@ public:
                 ans=' '+ans;
             }
         }
-         while(!st.empty())
-        {
-            char a=st.top();
-            st.pop();
-            ans=a+ans;
-         }
         reverse(ans.begin(),ans.end());
         if(ans[ans.size()-1]==' ')
         {
