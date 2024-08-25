@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void subset(vector<vector<int>>& ans,vector<int>&arr,int k,int n,int i,int& sum)
+    void subset(vector<vector<int>>& ans,vector<int>&arr,int k,int n,int i,int sum)
     {
         if(arr.size()==k&&sum==n)
         {
@@ -12,9 +12,7 @@ public:
             return;
         }
         arr.push_back(i);
-        sum+=i;
-        subset(ans,arr,k,n,i+1,sum);
-        sum-=i;
+        subset(ans,arr,k,n,i+1,sum+i);
         arr.pop_back();
         subset(ans,arr,k,n,i+1,sum);
     }
