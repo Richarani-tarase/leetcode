@@ -1,28 +1,23 @@
 class Solution {
 public:
-    void per(vector<int>nums,vector<int>temp,vector<int>v,vector<vector<int>>&ans)
+    void per(vector<int>&nums,vector<int>temp,int j,vector<vector<int>>&ans)
     {
-        if(temp.size()==nums.size())
+        if(j==nums.size())
         {
-            ans.push_back(temp);
+            ans.push_back(nums);
             return;
         }
-        for(int i=0;i<nums.size();i++)
-        {
-            if(v[i]==0)
-            {
-                v[i]=1;
-                temp.push_back(nums[i]);
-                per(nums,temp,v,ans);
-                v[i]=0;
-                temp.pop_back();
-            }
+        for(int i=j;i<nums.size();i++)
+        {  
+            swap(nums[i],nums[j]);
+            per(nums,temp,j+1,ans);
+            swap(nums[i],nums[j]);
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>>ans;
         vector<int>temp,vis(nums.size(),0);
-        per(nums,temp,vis,ans);
+        per(nums,temp,0,ans);
         return ans;
     }
 };
