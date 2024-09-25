@@ -13,14 +13,14 @@ public:
         return dp[n]=max(pick,notpick);
     }
     int rob(vector<int>& nums) {
-        int n = nums.size();
-        if(n==1)
+        int s = nums.size();
+        if(s==1)
             return nums[0];
-        vector<int>dp(nums.size(),-1);
-        int ans=find(nums,nums.size()-2,dp);
+        vector<int>dp(s,-1);
+        int ans=find(nums,s-2,dp);
         nums.erase(nums.begin());
-         vector<int>dp2(nums.size(),-1);
-        int ans2=find(nums,nums.size()-1,dp2);
+        vector<int>dp2(s,-1);
+        int ans2=find(nums,s-2,dp2);
         return max(ans,ans2);
     }
 };
