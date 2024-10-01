@@ -4,8 +4,7 @@ public:
         int n=grid.size();
         int m=grid[0].size();
         queue<pair<int,int>>q;
-        int c=0,t=0;
-        int count=0,min=0;
+        int c=0,count=0,min=0;
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<m;j++)
@@ -29,10 +28,11 @@ public:
                 q.pop();
                 for(int i=0;i<4;i++)
                 {
-                  if(a+row[i]>=0&&b+col[i]>=0&&a+row[i]<n&&b+col[i]<m&&grid[a+row[i]][b+col[i]]==1)
+                    int nr=a+row[i],nc=b+col[i];
+                  if(nr>=0&&nc>=0&&nr<n&&nc<m&&grid[nr][nc]==1)
                     {
-                        grid[a+row[i]][b+col[i]]=2;
-                        q.push({a+row[i],b+col[i]});
+                        grid[nr][nc]=2;
+                        q.push({nr,nc});
                     }
                 }
             }
